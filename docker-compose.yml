@@ -1,0 +1,24 @@
+services:
+  producer:
+    image: python:3.8-slim
+    command: ["bash", "-c", "cd /app && bash ./run_app.sh"]
+    environment:
+      - IPC_PATH=/tmp/ipc/event_stream.fifo
+    volumes:
+      - ./producer_app:/app
+      - ipc:/tmp/ipc
+  consumer:
+    image: python:3.8-slim
+    command: ["bash", "-c", "cd /app && bash ./run_app.sh"]
+    environment:
+      - IPC_PATH=/tmp/ipc/event_stream.fifo
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./consumer_app:/app
+      - ipc:/tmp/ipc
+    depends_on:
+      - producer
+volumes:
+  ipc:
+  

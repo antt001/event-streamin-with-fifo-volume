@@ -1,0 +1,4 @@
+{
+  "event_types": ["foo", "bar", "baz", "spam", "ham", "eggs"],
+  "data": ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore", "magna", "aliqua"]
+}
